@@ -1,0 +1,71 @@
+<!Doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <title>ClockTower</title>
+    <link rel="stylesheet" href="clock.css">
+</head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="clock.js"></script>
+<body>
+    <div class="card-ctn container">
+        <div class="row">
+            <div class="col s12 m8 offset-m2">
+                <!-- Card Start -->
+                <div class="card">
+
+                    <!-- Card Image -->
+                    <div class="card-image">
+                        <!---<img class="modified-card-image" src="https://www.princeton.edu/presskits/campusplan/docs/IMG_3463.jpg" alt="" width="460" height="545" />-->
+                        <span class="card-title">Clock Tower Bell Counter</span>
+                        <a class="btn-floating halfway-fab waves-effect waves-light orange" onclick="playBellSound()"><i class="material-icons">play_arrow</i></a>
+                    </div>
+                    <!-- Card Image end -->
+                    <!-- Card Content -->
+                    <form class="card-content">
+                        <div class="row">
+                            <div class="input-field col s12 m6">
+                                <i class="material-icons prefix">schedule</i>
+                                <input id="startTimeInput" type="text" placeholder="Ex: 2:00" class="validate" required />
+                                <label for="startTimeInput">Start Time</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <i class="material-icons prefix">alarm_on</i>
+                                <input id="endTimeInput" type="text" placeholder="Ex: 3:00" class="validate" required />
+                                <label for="endTimeInput">End Time</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 center-align">
+                                <a class="waves-effect waves-light btn blue" href="javascript:void(0);" onclick="displayBellCount()">calculate</a>
+                                <br />
+                                <span id="errMessage"></span>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- Card Content end -->
+
+                </div>
+                <!-- Card end -->
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Count Modal -->
+    <div id="modal1"  tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+      <span id="timeModalText"></span>
+            <h4 id="countDisplay"></h4>
+        </div>
+        <div class="center-align">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" onclick="playBellsUsingCount()">Play</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-grey btn-flat">Close</a>
+        </div>
+        <br />
+    </div>
+    <!-- Count Modal end -->
+</body>
+</html>
